@@ -24,13 +24,13 @@ function App() {
         }
       />
       <Route
-  path="/projects/new"
-  element={
-    <ProtectedRoute>
-      <NewProject />
-    </ProtectedRoute>
-  }
-/>
+        path="/projects/new"
+        element={
+          <ProtectedRoute>
+            <NewProject />
+          </ProtectedRoute>
+        }
+      />
       <Route path="*" element={<Navigate to="/projects" replace />} />
     </Routes>
   );
