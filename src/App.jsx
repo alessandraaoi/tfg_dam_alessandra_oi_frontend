@@ -1,8 +1,9 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
-import { getToken } from './api';
-import Login from './pages/Login';
-import Projects from './pages/Projects';
-import Register from './pages/Register';
+import { Navigate, Route, Routes } from "react-router-dom";
+import { getToken } from "./api";
+import Login from "./pages/Login";
+import Projects from "./pages/Projects";
+import Register from "./pages/Register";
+import NewProject from "./pages/NewProject";
 
 // Si no hay sesión iniciada, redirige al login
 function ProtectedRoute({ children }) {
@@ -22,6 +23,14 @@ function App() {
           </ProtectedRoute>
         }
       />
+      <Route
+  path="/projects/new"
+  element={
+    <ProtectedRoute>
+      <NewProject />
+    </ProtectedRoute>
+  }
+/>
       <Route path="*" element={<Navigate to="/projects" replace />} />
     </Routes>
   );
