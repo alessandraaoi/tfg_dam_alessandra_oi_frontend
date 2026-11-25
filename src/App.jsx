@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Projects from "./pages/Projects";
 import Register from "./pages/Register";
 import NewProject from "./pages/NewProject";
+import ProjectDetail from "./pages/ProjectDetail";
 
 // Si no hay sesión iniciada, redirige al login
 function ProtectedRoute({ children }) {
@@ -28,6 +29,14 @@ function App() {
         element={
           <ProtectedRoute>
             <NewProject />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/projects/:id"
+        element={
+          <ProtectedRoute>
+            <ProjectDetail />
           </ProtectedRoute>
         }
       />
